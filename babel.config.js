@@ -14,12 +14,6 @@ module.exports = {
         'node:os': 'os-browserify',
         'path': 'path-browserify',
         'node:path': 'path-browserify',
-        '#compare': './node_modules/uint8arrays/dist/src/compare.js',
-          '#concat': './node_modules/uint8arrays/dist/src/concat.js',
-          '#from-string': './node_modules/uint8arrays/dist/src/from-string.js',
-          '#to-string': './node_modules/uint8arrays/dist/src/to-string.js',
-          '#alloc': './node_modules/uint8arrays/dist/src/alloc.js',
-          '#util/as-uint8array': './node_modules/uint8arrays/dist/src/util/as-uint8array.js',
       }
     }],
     ['@babel/plugin-transform-private-methods', { loose: true }],
