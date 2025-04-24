@@ -1,0 +1,54 @@
+diff --git a/node_modules/uint8arrays/dist/src/concat.js b/node_modules/uint8arrays/dist/src/concat.js
+index 35c8b97..66e1306 100644
+--- a/node_modules/uint8arrays/dist/src/concat.js
++++ b/node_modules/uint8arrays/dist/src/concat.js
+@@ -1,5 +1,5 @@
+-import { allocUnsafe } from '#alloc';
+-import { asUint8Array } from '#util/as-uint8array';
++import { allocUnsafe } from './alloc.js';
++import { asUint8Array } from './util/as-uint8array.js';
+ /**
+  * Returns a new Uint8Array created by concatenating the passed Uint8Arrays
+  */
+diff --git a/node_modules/uint8arrays/dist/src/index.js b/node_modules/uint8arrays/dist/src/index.js
+index 3891bf9..f552fdb 100644
+--- a/node_modules/uint8arrays/dist/src/index.js
++++ b/node_modules/uint8arrays/dist/src/index.js
+@@ -164,9 +164,9 @@
+  */
+ import { equals } from './equals.js';
+ import { xor } from './xor.js';
+-import { compare } from '#compare';
+-import { concat } from '#concat';
+-import { fromString } from '#from-string';
+-import { toString } from '#to-string';
++import { compare } from './compare.js';
++import { concat } from './concat.js';
++import { fromString } from './from-string.js';
++import { toString } from './to-string.js';
+ export { compare, concat, equals, fromString, toString, xor };
+ //# sourceMappingURL=index.js.map
+\ No newline at end of file
+diff --git a/node_modules/uint8arrays/dist/src/util/bases.js b/node_modules/uint8arrays/dist/src/util/bases.js
+index a50aee8..4b1f5ce 100644
+--- a/node_modules/uint8arrays/dist/src/util/bases.js
++++ b/node_modules/uint8arrays/dist/src/util/bases.js
+@@ -1,5 +1,5 @@
+ import { bases } from 'multiformats/basics';
+-import { allocUnsafe } from '#alloc';
++import { allocUnsafe } from '../alloc.js';
+ function createCodec(name, prefix, encode, decode) {
+     return {
+         name,
+diff --git a/node_modules/uint8arrays/src/concat.ts b/node_modules/uint8arrays/src/concat.ts
+index 2ef6de1..6663f25 100644
+--- a/node_modules/uint8arrays/src/concat.ts
++++ b/node_modules/uint8arrays/src/concat.ts
+@@ -1,5 +1,5 @@
+-import { allocUnsafe } from '#alloc'
+-import { asUint8Array } from '#util/as-uint8array'
++import { allocUnsafe } from './alloc.js'
++import { asUint8Array } from './util/as-uint8array.js'
+ 
+ /**
+  * Returns a new Uint8Array created by concatenating the passed Uint8Arrays
