@@ -30,15 +30,23 @@ export default function App() {
 
 
   useEffect(()=>{
-    if(libp2p){
-      console.log("dialing")
+    async function dialPeer(){
       const ma = multiaddr('/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt')
-     libp2p.dial(ma).then(()=>{
-        console.log("dialed to peer");
-      }, (err)=>{
-        console.log("Error dialing to peer", err)
+      try {
+        console.log('Dialing multiaddr %s', ma.toString())
+        await libp2p.dial(ma)
+        console.log('Dialed multiaddr %s', ma.toString())
+        return
+      } catch (error) {
+        console.log(`failed to dial multiaddr: %o`, error)
       }
-      )
+    }
+    if(libp2p){
+      console.log('Dialing peer...')
+      dialPeer().then(() => {
+        console.log('Dialed peer successfully')
+      })
+   
   }}, [libp2p])
 
 
