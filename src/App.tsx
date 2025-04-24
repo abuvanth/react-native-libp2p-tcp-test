@@ -7,7 +7,7 @@ import { multiaddr } from '@multiformats/multiaddr'
 import debug from 'debug'
 import { config } from './config/libp2pconfig';
 
-debug.enable('libp2p:*,*:trace')
+debug.enable('libp2p:*')
 export default function App() {
   const [libp2p, setLibp2p] = useState(null)
   const [peers, setPeers] = useState(null)
